@@ -20,7 +20,7 @@ int level_load(const char *filename) {
     return E_ERROR;
   }
 
-  for (i=0; i<24 || !feof(levelfile); i++) { // Run until i is 24 (i==line), or until EOF.
+  for (i=0; i<24 && !feof(levelfile); i++) { // Run until i is 24 (i==line), or until EOF.
     if (fgets(line, 81, levelfile) == NULL) {	// Read in one line
       if (!feof(levelfile)) {	// If there was an error, and it is /not/ an EOF, yell about it
         fprintf(stderr, "nhss: fgets(): %s at %s:%d\n", strerror(errno), __FILE__, __LINE__);
