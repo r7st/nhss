@@ -86,7 +86,7 @@ int main(int argc, char **argv) {
   level_print();
 
   if (replay) {
-    while (movekey=record_get()) {
+    while ((movekey=record_get())) {
       ret = moveKey(movekey);
       level_print();
       refresh();
@@ -103,7 +103,7 @@ int main(int argc, char **argv) {
     }
   }
   else {
-    while (movekey = getch()) {  // Read in a direction key
+    while ((movekey = getch())) {  // Read in a direction key
       if (movekey == 'q') {  // If the key is q, quit.
         endwin();
         record_close();  // This function /could/ return an error, but what am I going to do?  quit?  ;]
