@@ -7,9 +7,6 @@
 #include "move.h"
 #include "record.h"
 
-extern int record_add(const char);
-extern int record_close();
-
 nhss_info_t info;
 extern int optind;
 int boulders;  /* Set to 1 if boulders are to be represented as '0's */
